@@ -3,7 +3,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
+var ball;
 function preload()
 {
 	
@@ -11,12 +11,21 @@ function preload()
 
 function setup() {
 	createCanvas(800, 700);
+	var ball_option={
+		isStatic:false,
+		restitution:0.3,
+		friction:0,
+		density:1.2
 
 
 	engine = Engine.create();
 	world = engine.world;
 
 	//Create the Bodies Here.
+	this.body = Bodies.rectangle(x,y,w,y,opitions);
+	this.w =w ;
+	this.y = y;
+	World.add(world.this.body);
 
 
 	Engine.run(engine);
